@@ -1,0 +1,28 @@
+package com.example.instagram_backend.domain.UserInfoManagement.controller;
+
+import com.example.instagram_backend.domain.UserInfoManagement.dao.User;
+import com.example.instagram_backend.domain.UserInfoManagement.dto.UserRelationDto;
+import com.example.instagram_backend.domain.UserInfoManagement.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+    //키워드를 포함하는 유저 객체 찾기
+    @GetMapping("")
+    public List<UserRelationDto> CheckForUsers(@RequestParam String keyword){
+        return userService.findUsersByNickname(keyword);
+    }
+
+
+}
