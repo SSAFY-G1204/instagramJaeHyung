@@ -15,11 +15,12 @@ public class Relation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long relationId;
 
+    //팔로잉을 하는 사람
     @ManyToOne
     @JoinColumn(name = "userId")
     private User users;
 
-    @Column(nullable = false)
-    private int followerId;
+    //팔로우를 하는 사람
+    private Long followerId;
 
 }

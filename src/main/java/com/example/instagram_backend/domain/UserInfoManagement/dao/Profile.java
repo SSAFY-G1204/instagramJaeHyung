@@ -13,7 +13,7 @@ public class Profile {
     //    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 //    private Long profileId;
     @Id
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @MapsId
     @JoinColumn(name = "userId")  // 외래 키로 profiles 테이블에서 userId를 사용합니다.
     private User users;

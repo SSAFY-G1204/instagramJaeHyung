@@ -15,9 +15,9 @@ public class Media {
     // @MapsId를 통해 Users 엔티티의 userId와 동일한 값이 설정됩니다.
 
     @Id
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId
-    @JoinColumn(name = "postId", nullable = false)  // 외래 키로 profiles 테이블에서 userId를 사용합니다.
+    @JoinColumn(name = "postId")  // 외래 키로 profiles 테이블에서 userId를 사용합니다.
     private Post post;
 
     @Column

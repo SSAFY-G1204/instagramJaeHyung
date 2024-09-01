@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/api/users")
 public class UserController {
 
     @Autowired
     private UserService userService;
     //키워드를 포함하는 유저 객체 찾기
-    @GetMapping("")
-    public List<UserRelationDto> CheckForUsers(@RequestParam String keyword){
+    @GetMapping("/")
+    public List<User> CheckForUsers(@RequestParam String keyword){
         return userService.findUsersByNickname(keyword);
     }
 

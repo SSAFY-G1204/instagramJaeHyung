@@ -15,10 +15,12 @@ import java.util.Optional;
 public class UserService {
 
     @Autowired
-    private UserRepository userRepository;
-    public List<UserRelationDto> findUsersByNickname(String keyword) {
-        return userRepository.findUsersWithRelationIds(keyword);
+    private  UserRepository userRepository;
+
+    public List<User> findUsersByNickname(String keyword) {
+        return userRepository.findUsersByNickname(keyword);
     }
+
 
 
 

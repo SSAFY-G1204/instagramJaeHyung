@@ -29,6 +29,10 @@ public class Post {
     @Column(length = 100)
     private String content;
 
+    //좋아요 수
+    @Column(length = 100, nullable = false)
+    private String liking;
+
     //등록일
     @Column(nullable = false)
     private String rgtDate;
@@ -46,8 +50,10 @@ public class Post {
     @Column(nullable=false)
     private List<Media> medias = new ArrayList<Media>();
 
+
     //JsonIgnore은 가져오지 않게 한거임 Post 조회할때..
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userId")
     private User user;
+
 }

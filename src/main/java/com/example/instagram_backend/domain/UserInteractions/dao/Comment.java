@@ -22,7 +22,7 @@ public class Comment {
     @Column(nullable = false)
     private Date rgtDate;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="postId")
     private Post post;
 }

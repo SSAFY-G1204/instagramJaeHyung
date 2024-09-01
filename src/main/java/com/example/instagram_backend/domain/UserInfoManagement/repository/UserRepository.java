@@ -15,8 +15,4 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> findUsersByNickname(@Param("keyword") String keyword);
 
     List<User> findUserByUserId(Long userId);
-
-    @Query("SELECT new com.example.instagram_backend.domain.UserInfoManagement.dto.UserRelationDto(u.userId, u.email, u.password, u.name, u.provider, u.nickname, r.relationId) " +
-            "FROM User u JOIN u.relations r WHERE u.nickname LIKE %:keyword%")
-    List<UserRelationDto> findUsersWithRelationIds(@Param("keyword") String keyword);
 }

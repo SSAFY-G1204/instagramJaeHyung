@@ -37,20 +37,20 @@ public class User {
     @Column(nullable = false )
     private String nickname;
 
-    @OneToMany(mappedBy="users")
-    private List<Relation> relations = new ArrayList<>();
+    //    @OneToMany(mappedBy="users", fetch=FetchType.LAZY)
+//    private List<Relation> relations = new ArrayList<>();
     //일대일
-    @OneToOne(mappedBy="users")
+    @OneToOne(mappedBy="users", fetch=FetchType.LAZY)
     private Profile profile;
 
-    //users에 의해 매핑 되었다.
-    @OneToMany(mappedBy ="user")
-    private List<Like> likes = new ArrayList<Like>();
+//    //users에 의해 매핑 되었다.
+//    @OneToMany(mappedBy ="user", fetch=FetchType.LAZY)
+//    private List<Like> likes = new ArrayList<Like>();
 
-    @OneToMany(mappedBy ="user")
-    private List<Chat> chats = new ArrayList<Chat>();
+//    @OneToMany(mappedBy ="user", fetch=FetchType.LAZY)
+//    private List<Chat> chats = new ArrayList<Chat>();
 
-    @OneToMany(mappedBy ="user")
-    private List<Post> posts = new ArrayList<Post>();
+//    @OneToMany(mappedBy ="user", fetch=FetchType.LAZY)
+//    private List<Post> posts = new ArrayList<Post>();
 
 }
