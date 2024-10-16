@@ -14,8 +14,13 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     Optional<User> findByUserId(Long userId);
 
+    Optional<User> findByEmail(String email);
+
+
     @Query(value = "SELECT * FROM instagram.users WHERE nickname LIKE %:keyword%", nativeQuery = true)
     List<User> findUsersByNickname(@Param("keyword") String keyword);
+
+
 
     List<User> findUserByUserId(Long userId);
 }

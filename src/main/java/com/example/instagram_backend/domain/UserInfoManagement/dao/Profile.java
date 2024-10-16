@@ -10,8 +10,6 @@ import lombok.*;
 @Builder // 빌더 패턴
 @Table(name = "profiles")
 public class Profile {
-    //    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Long profileId;
     @Id
     @OneToOne(fetch = FetchType.LAZY)
     @MapsId

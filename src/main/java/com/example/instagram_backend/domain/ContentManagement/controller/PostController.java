@@ -14,7 +14,6 @@ import java.util.List;
 @RestController
 public class PostController {
 
-
     @Autowired
     private PostService postService;
 
@@ -25,11 +24,7 @@ public class PostController {
         return postService.findFolollowingPostsByUserId(userId);
     }
 
-//    @GetMapping("/home/test")
-//    public List<testDto> GetMyTest(){
-//        return postService.findPost();
-//    }
-//
+
     @PostMapping("/posts")
     public ResponseEntity<ApiResponseEntity> addPost(@RequestBody AddPostRequestDto postRequestDto) {
         postService.addPost(postRequestDto);
