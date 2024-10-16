@@ -3,9 +3,9 @@ spring:
     name: instagram_backend
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/instagram
-    username: root
-    password: root
+    url: jdbc:mysql://database-1.clw6c6kq0ltj.ap-northeast-2.rds.amazonaws.com:3306/instagram
+    username: admin
+    password: instagramssafy
   jpa:
     hibernate:
       ddl-auto: update
